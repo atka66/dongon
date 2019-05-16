@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,11 +15,10 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 			crossorigin="anonymous"></script>
-	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet"/>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.min.js"></script>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
-		  integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+		  integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-route.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-growl-2/0.7.9/angular-growl.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-growl-2/0.7.9/angular-growl.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="main.css">
@@ -27,9 +26,9 @@
 </head>
 <body ng-app="Dongon" ng-cloak>
 <div class="container">
-	<div class="jumbotron">
-		<h1>Dongon</h1>
+	<div ng-view>
 	</div>
 </div>
+<div growl></div>
 </body>
 </html>
