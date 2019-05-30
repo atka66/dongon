@@ -30,11 +30,15 @@
 			* Item gathering
 			* Mob killing
 			* Boss killing
-	* Blacksmith: 
+	* Blacksmith:
 		* Trading
 		* Repairing items
 	* Inn:
 		* Replenish health
+	* Enchanter:
+		* Applies runes to equipment
+		* Removes runes from equipment
+		* Upgrades runes
 
 ### Items
 
@@ -44,3 +48,8 @@
 	* 1 range: Dagger, Sword, Axe
 	* 2 range
 * Sets: Equipping more items from the same set gives unique bonuses
+* Runes can be used to add upgrades to equipments
+	* Different types of runes
+	* 3 of the same type creates an upgraded rune of the type
+	* Equipments can be upgraded to have sockets which can house runes
+	* Runes can be extracted from runed equipments (doesn't cost the equipment or the rune, only currency)
