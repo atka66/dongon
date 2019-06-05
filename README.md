@@ -45,11 +45,12 @@
 * Items can be bought (from NPCs or players) or looted
 * Armors: Helmet, Armor, Gloves, Boots
 * Weapons:
-	* 1 range: Dagger, Sword, Axe
-	* 2 range
+	* 1 range: Dagger, Sword, etc.
+	* 2 range: Throwing knife, Javelin, etc.
+	* 3 range: Longbow, Crossbow, etc.
 * Sets: Equipping more items from the same set gives unique bonuses
 * Runes can be used to add upgrades to equipments
 	* Different types of runes
-	* 3 of the same type creates an upgraded rune of the type
+	* 3 runes of the same type creates an upgraded rune of the type
 	* Equipments can be upgraded to have sockets which can house runes
 	* Runes can be extracted from runed equipments (doesn't cost the equipment or the rune, only currency)
