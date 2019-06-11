@@ -18,22 +18,15 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	private UserDetailsService userDetailsService;
 
 	@Bean
-	public BCryptPasswordEncoder bCryptPasswordEncoder () {
+	public BCryptPasswordEncoder bCryptPasswordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
 
 	protected void configure(HttpSecurity http) throws Exception {
-		http
-			.authorizeRequests()
-			.antMatchers("/resources/**", "/registration", "/h2-console").permitAll()
-			.anyRequest().authenticated()
-			.and()
-			.formLogin()
-			.loginPage("/login")
-			.permitAll()
-			.and()
-			.logout()
-			.permitAll();
+		http.authorizeRequests()
+			.antMatchers("/").permitAll()
+			.antMatchers("/h2_console/**").permitAll()
+			.and().csrf().disable().headers().frameOptions().disable();
 	}
 
 	@Bean
