@@ -1,0 +1,55 @@
+<h1 class="display-4">Statisztika</h1>
+
+<div ng-if="!!ready">
+	<dl class="row">
+		<dt class="col-sm-4">Sablonok száma:</dt>
+		<dd class="col-sm-8">{{stats.totalTemplates}}</dd>
+		<dt class="col-sm-4">Készletek száma:</dt>
+		<dd class="col-sm-8">{{stats.totalSources}}</dd>
+		<dt class="col-sm-4">Összes generálható egyedi mém száma:</dt>
+		<dd class="col-sm-8">{{stats.totalPossibilities}}</dd>
+	</dl>
+	<h1 class="display-4 pt-5 text-center">Leggyűlöltebb képek</h1>
+	<div class="row">
+
+		<div class="col-lg-6">
+			<div class="card">
+				<div class="card-body meme-content">
+					<img id="template" class="template-img checkered-background"
+						 src="" ng-src="{{stats.mostHatedTemplate.imageByte}}"/>
+					<div id="source-border" class="source-border" ng-show="showBorder"></div>
+				</div>
+			</div>
+			<div class="mt-2 d-flex">
+				<button class="mx-1 btn btn-dark w-100" ng-click="goToTemplate(stats.mostHatedTemplate.id)">
+					<i class="fas fa-fw fa-eye"></i> Megnézés
+				</button>
+				<button class="mx-1 btn btn-dark w-100" ng-click="redeemImage(stats.mostHatedTemplate.id)">
+					<i class="fas fa-fw fa-handshake text-success"></i> Megváltás
+				</button>
+				<button class="mx-1 btn btn-dark w-100" ng-click="removeImage(stats.mostHatedTemplate)">
+					<i class="fas fa-fw fa-trash-alt text-danger"></i> Törlés
+				</button>
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="card">
+				<div class="card-body meme-content">
+					<img class="template-img" src="" ng-src="{{stats.mostHatedSource.imageByte}}"/>
+				</div>
+			</div>
+			<div class="mt-2 d-flex">
+				<button class="mx-1 btn btn-dark w-100" ng-click="goToSource(stats.mostHatedSource.id)">
+					<i class="fas fa-fw fa-eye"></i> Megnézés
+				</button>
+				<button class="mx-1 btn btn-dark w-100" ng-click="redeemImage(stats.mostHatedSource.id)">
+					<i class="fas fa-fw fa-handshake text-success"></i> Megváltás
+				</button>
+				<button class="mx-1 btn btn-dark w-100" ng-click="removeImage(stats.mostHatedSource)">
+					<i class="fas fa-fw fa-trash-alt text-danger"></i> Törlés
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="loading" ng-if="!ready"></div>

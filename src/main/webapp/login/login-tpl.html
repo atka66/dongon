@@ -1,0 +1,43 @@
+<div class="row">
+	<div class="col-lg-6 offset-lg-3">
+		<div class="card">
+			<div class="card-header">
+				<button class="btn btn-block btn-lg btn-primary" type="button" ng-click="fryImage()"
+						ng-disabled="!ready">
+					<span class="spinner-border" role="status" ng-show="!ready"></span>
+					<span ng-show="ready">Ránts!</span>
+				</button>
+			</div>
+		</div>
+		<div class="card" ng-show="!!template" ng-class="!ready ? 'invisible' : ''">
+			<div class="card-body meme-content">
+				<img id="main-source" class="main-source-img" src="" ng-src="{{source.imageByte}}"/>
+				<img id="main-template" class="template-img" src="" ng-src="{{template.imageByte}}"/>
+			</div>
+		</div>
+		<div ng-if="!!template && !!ready">
+			<div class="mt-1 d-flex">
+				<button class="mx-1 w-100 btn btn-dark" ng-click="goToTemplate()">
+					<i class="fas fa-fw fa-eye"></i> Sablon
+				</button>
+				<button class="mx-1 w-100 btn btn-dark" ng-click="goToSource()">
+					<i class="fas fa-fw fa-eye"></i> Készlet
+				</button>
+			</div>
+			<div class="mt-1 d-flex">
+				<button class="mx-1 w-100 offset-sm-1 btn btn-link btn-downvote"
+						ng-class="alreadyDownvotedTemplate ? 'disabled' : ''" ng-click="downvoteTemplate()">
+					<i class="fa-fw fa-thumbs-down" ng-class="alreadyDownvotedTemplate  ? 'fas' : 'far'"></i>
+				</button>
+				<button class="mx-1 w-100 btn btn-link btn-favorite" ng-class="alreadyFaved ? 'disabled' : ''"
+						ng-click="favorite()">
+					<i class="fa-fw fa-star" ng-class="alreadyFaved ? 'fas' : 'far'"></i>
+				</button>
+				<button class="mx-1 w-100 btn btn-link btn-downvote"
+						ng-class="alreadyDownvotedSource ? 'disabled' : ''" ng-click="downvoteSource()">
+					<i class="fa-fw fa-thumbs-down" ng-class="alreadyDownvotedSource ? 'fas' : 'far'"></i>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,119 @@
+/* loading animation */
+
+.loading {
+    margin: 25px auto;
+    border: 10px solid #DDD; /* Light grey */
+    border-top: 10px solid #888; /* Blue */
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+div.meme-content {
+    padding: 0;
+}
+
+.image-card {
+    margin: 16px;
+}
+
+.card-image {
+    border-bottom: 1px solid #AAA;
+    width: 12rem;
+    height: 12rem;
+    object-fit: contain;
+}
+
+.card-body {
+    padding: 10px;
+}
+
+.source-border {
+    position: absolute;
+    border: 2px solid #0F0;
+}
+
+.image-upload-preview {
+    border: 1px solid #AAA;
+    width: 20rem;
+    height: 20rem;
+    object-fit: contain;
+}
+
+.modal-content {
+    border: 0;
+}
+
+.modal-body {
+    padding: 0;
+}
+
+.modal-image {
+    max-width: 500px;
+}
+
+.checkered-background {
+    background-image: linear-gradient(45deg, #ccc 25%, transparent 25%),
+    linear-gradient(135deg, #ccc 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #ccc 75%),
+    linear-gradient(135deg, transparent 75%, #ccc 75%);
+    background-size: 25px 25px; /* Must be a square */
+    background-position: 0 0, 12.5px 0, 12.5px -12.5px, 0 12.5px;
+}
+
+.input-group-text.prepend-dark {
+    border: 0;
+    color: #999;
+    background-color: #343a40;
+}
+
+.form-control.input-dark {
+    color: #DDD;
+    border-color: #555d65;
+    background-color: #343a40;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: searchfield-cancel-button;
+}
+
+.main-source-img {
+    position: absolute;
+    object-fit: contain;
+}
+
+.template-img {
+    width: 100%;
+    position: relative;
+}
+
+button.btn-favorite {
+    color: #888;
+}
+button.btn-favorite:hover {
+    color: #FFA500;
+}
+
+button.btn-downvote {
+    color: #888;
+}
+button.btn-downvote:hover {
+    color: #DC3545;
+}
+
+td.name-cell:hover:after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: " \f304";
+    color: #888;
+}
