@@ -1,16 +1,17 @@
 var app = angular.module('Dongon', ['ngRoute', 'angular-growl'])
 	.config(function ($routeProvider) {
 		$routeProvider
-			.when('/', {
+			.when('/login', {
 				templateUrl: 'login/login-tpl.html',
 				controller: 'LoginCtrl'
 			})
-			.when('/test', {
-				templateUrl: 'test/test-tpl.html',
-				controller: 'TestCtrl'
+			.when('/succ', {
+				templateUrl: 'login/login-tpl.html',
+				controller: 'SuccCtrl'
 			})
-			.otherwise({
-				redirectTo: '/'
+			.when('/fail', {
+				templateUrl: 'login/login-tpl.html',
+				controller: 'FailCtrl'
 			});
 	})
 	.config(['growlProvider', function(growlProvider) {

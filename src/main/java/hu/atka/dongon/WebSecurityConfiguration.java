@@ -24,9 +24,10 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-			.antMatchers("/").permitAll()
-			.antMatchers("/h2_console/**").permitAll()
-			.and().csrf().disable().headers().frameOptions().disable();
+			.antMatchers("/login*").permitAll()
+			.anyRequest().authenticated()
+			.and().formLogin().loginPage("/login").failureUrl("/login?error").defaultSuccessUrl("/succ")
+			.and().csrf().disable();
 	}
 
 	@Bean
