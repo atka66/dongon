@@ -1,7 +1,14 @@
-app.service('rest', function ($http) {
+app.service('rest', function ($http, $cookies) {
 
-	this.getTemplates = function () {
-		return $http.get('login');
+	// login endpoint to check if credentials are correct (by checking Authorization header via backend)
+	this.getPrincipal = function () {
+		return $http({
+			method: 'GET',
+			url: 'rest/secure/user',
+			headers: {
+				'Authorization': 'Basic ' + $cookies.get('auth-header')
+			}
+		});
 	};
 
 /*

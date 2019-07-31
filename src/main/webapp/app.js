@@ -1,10 +1,11 @@
-var app = angular.module('Dongon', ['ngRoute', 'angular-growl'])
+var app = angular.module('Dongon', ['ngRoute', 'ngCookies', 'angular-growl'])
 	.config(function ($routeProvider) {
 		$routeProvider
-			.when('/login', {
+			.when('/', {
 				templateUrl: 'login/login-tpl.html',
 				controller: 'LoginCtrl'
 			})
+			// TODO
 			.when('/succ', {
 				templateUrl: 'login/login-tpl.html',
 				controller: 'SuccCtrl'

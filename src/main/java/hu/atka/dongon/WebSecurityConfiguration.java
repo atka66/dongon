@@ -8,12 +8,16 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import javax.servlet.http.HttpServletResponse;
 
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
+
 	@Autowired
 	private UserDetailsService userDetailsService;
 
@@ -24,9 +28,16 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-			.antMatchers("/login*").permitAll()
-			.anyRequest().authenticated()
-			.and().formLogin().loginPage("/login").failureUrl("/login?error").defaultSuccessUrl("/succ")
+			.antMatchers("/rest/secure/**").authenticated()
+			.anyRequest().permitAll()
+			.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+			.and().httpBasic().authenticationEntryPoint((request, response, authException) -> {
+				// failed authentication should ONLY result in unauthorized status code
+				if (authException != null) {
+					response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+					response.getWriter().print("Unauthorizated....");
+				}
+			})
 			.and().csrf().disable();
 	}
 

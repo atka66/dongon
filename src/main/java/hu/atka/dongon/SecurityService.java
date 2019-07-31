@@ -1,4 +1,4 @@
-package hu.atka.dongon.service;
+package hu.atka.dongon;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;

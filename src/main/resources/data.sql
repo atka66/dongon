@@ -7,4 +7,4 @@ CREATE TABLE user (
 );
 
 INSERT INTO user (username, password) VALUES
-	('bob', 'asdQWE123');
+	('bob', '$2a$10$XpavH.xvX.xP7veNS.XxpuQk9hn8eJTINfiWneyNi7nmIkp6Vh4JW'); -- bob : asdQWE123
