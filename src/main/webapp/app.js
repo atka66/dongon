@@ -5,14 +5,9 @@ var app = angular.module('Dongon', ['ngRoute', 'ngCookies', 'angular-growl'])
 				templateUrl: 'login/login-tpl.html',
 				controller: 'LoginCtrl'
 			})
-			// TODO
-			.when('/succ', {
-				templateUrl: 'login/login-tpl.html',
-				controller: 'SuccCtrl'
-			})
-			.when('/fail', {
-				templateUrl: 'login/login-tpl.html',
-				controller: 'FailCtrl'
+			.when('/test', {
+				templateUrl: 'test/test-tpl.html',
+				controller: 'TestCtrl'
 			});
 	})
 	.config(['growlProvider', function(growlProvider) {
@@ -20,4 +15,14 @@ var app = angular.module('Dongon', ['ngRoute', 'ngCookies', 'angular-growl'])
 		growlProvider.globalDisableCloseButton(true);
 		growlProvider.globalDisableCountDown(true);
 		growlProvider.globalTimeToLive(3000);
-	}]);
+	}])
+	.run(function ($rootScope, $location, $cookies) {
+		$rootScope.$on('$routeChangeStart', function($event, next, current) {
+			if (!$cookies.get('auth-header')) {
+				console.log("cookie not found, goto root")
+				$location.path("/");
+			} else {
+				console.log("cookie found, staying at place")
+			}
+		});
+	});

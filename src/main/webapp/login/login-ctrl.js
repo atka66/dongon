@@ -1,21 +1,15 @@
-app.controller('LoginCtrl', function ($scope, rest, $cookies, auth) {
+app.controller('LoginCtrl', function ($scope, rest, $cookies, auth, $location) {
 
 	$scope.login = function () {
 		// store login details in cookie
 		$cookies.put('auth-header', btoa($scope.username + ':' + $scope.password))
 		rest.getPrincipal().then(function (resp) {
-			console.log("HAPPY")
-			console.log(resp);
+			$location.path("/test");
 		}, function (resp) {
-			console.log("SAD")
-			console.log(resp);
+			console.log("Could not log in!");
 			// remove cookie if login failed
 			$cookies.remove('auth-header');
 		});
 	}
 
-}).controller('SuccCtrl', function ($scope) { //TODO
-	$scope.msg = "SUCC";
-}).controller('FailCtrl', function ($scope) {
-	$scope.msg = "FAIL";
 });
