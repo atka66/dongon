@@ -1,13 +1,13 @@
-var app = angular.module('Dongon', ['ngRoute', 'ngCookies', 'angular-growl'])
+var app = angular.module('Dongon', ['ngRoute', 'angular-growl'])
 	.config(function ($routeProvider) {
 		$routeProvider
 			.when('/', {
 				templateUrl: 'login/login-tpl.html',
 				controller: 'LoginCtrl'
 			})
-			.when('/test', {
-				templateUrl: 'test/test-tpl.html',
-				controller: 'TestCtrl'
+			.when('/test/character-select', {
+				templateUrl: 'test/character-select-tpl.html',
+				controller: 'CharacterSelectCtrl'
 			});
 	})
 	.config(['growlProvider', function(growlProvider) {
@@ -16,13 +16,13 @@ var app = angular.module('Dongon', ['ngRoute', 'ngCookies', 'angular-growl'])
 		growlProvider.globalDisableCountDown(true);
 		growlProvider.globalTimeToLive(3000);
 	}])
-	.run(function ($rootScope, $location, $cookies) {
+	.run(function ($rootScope, $location, $window) {
 		$rootScope.$on('$routeChangeStart', function($event, next, current) {
-			if (!$cookies.get('auth-header')) {
-				console.log("cookie not found, goto root")
+			if (!$window.localStorage.getItem('auth')) {
+				console.log("auth not found, goto root")
 				$location.path("/");
 			} else {
-				console.log("cookie found, staying at place")
+				console.log("auth found, staying at place")
 			}
 		});
 	});
