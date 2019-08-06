@@ -1,4 +1,6 @@
-app.controller('LoginCtrl', function ($scope, rest, $location, $window) {
+app.controller('LoginCtrl', function ($scope, $rootScope, rest, $location, $window) {
+
+  $rootScope.heroClass = "is-dark";
 
 	$scope.login = function () {
 		// store login details in cookie

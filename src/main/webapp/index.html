@@ -19,12 +19,13 @@
 	<script src="services/rest-service.js"></script>
 </head>
 <body ng-app="Dongon" ng-cloak>
-<div class="container">
-	<div class="jumbotron">
-		<div ng-view>
+<section class="hero is-fullheight" ng-class="heroClass">
+	<div class="hero-body">
+		<div class="container">
+			<div ng-view></div>
 		</div>
 	</div>
-</div>
+</section>
 <div growl></div>
 </body>
 </html>
