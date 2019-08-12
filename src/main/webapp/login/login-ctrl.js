@@ -1,18 +1,31 @@
-app.controller('LoginCtrl', function ($scope, $rootScope, rest, $location, $window) {
+app.controller('LoginCtrl', function ($scope, rest, $location, $window, growl) {
 
-  $rootScope.heroClass = "is-dark";
+	$(function () {
+		$('[data-toggle="popover"]').popover()
+	})
 
 	$scope.login = function () {
-		// store login details in cookie
-		$window.localStorage.setItem('auth', $scope.username + ':' + $scope.password);
-		rest.getPrincipal().then(function (resp) {
-			$location.path("/test/character-select");
-		}, function (resp) {
-			console.log("Could not log in!");
-			// remove cookie if login failed
-			$window.localStorage.removeItem('auth')
-			$location.path("/");
-		});
+		if (!$scope.username || !$scope.password) {
+			growl.error("Username and password are required to login!")
+		} else {
+			// store login details in cookie
+			$window.localStorage.setItem('auth', $scope.username + ':' + $scope.password);
+			rest.getPrincipal().then(function (resp) {
+				$location.path("/test/character-select");
+			}, function (resp) {
+				growl.error("Cannot login! Please check if your username and password are correct!")
+				// remove cookie if login failed
+				$window.localStorage.removeItem('auth')
+				$location.path("/");
+			});
+		}
 	}
 
+	$scope.signup = function () {
+		if (!$scope.registerUsername || !$scope.registerPassword) {
+			growl.error("Username and password are required to sign up!")
+		} else {
+			// TODO registration
+		}
+	}
 });

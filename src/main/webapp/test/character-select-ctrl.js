@@ -1,6 +1,4 @@
-app.controller('CharacterSelectCtrl', function ($scope, $rootScope) {
-
-  $rootScope.heroClass = "is-info";
+app.controller('CharacterSelectCtrl', function ($scope) {
 
 	$scope.characters = [
 	{'name':'Atka', 'lvl':13},

@@ -1,21 +1,14 @@
-body {
-    color: #EEE;
-    /* blue theme
-    background-color: #32497D;
-    */
-    background-color: #313131;
-}
-
 .login-input {
     display: block;
     width: 100%;
     background-color: inherit;
     border: none;
-    border-bottom: 2px solid #525252;
+    border-bottom: 2px solid rgba(255,255,255,0.3);
     color: #EEE;
+    transition: border 0.2s;
 }
 
 .login-input:focus {
     outline: none;
-    border-bottom: 2px solid #ca3e47;
+    border-bottom: 2px solid #375a7f;
 }
