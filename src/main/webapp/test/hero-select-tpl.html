@@ -1,0 +1,16 @@
+<div class="row">
+	<div class="col-md-8">
+	</div>
+	<div class="card border-light col-md-4 my-5 px-0">
+		<h4 class="card-header text-center">Select your hero</h4>
+		<div class="card-body">
+			<button class="btn btn-primary btn-block" ng-class="selected === character ? 'active' : ''" 
+				ng-repeat="character in characters" ng-click="select(character)">
+				{{character.name}}
+			</button>
+			<button class="btn btn-info btn-block">
+				Create hero
+			</button>
+		</div>
+	</div>
+</div>
