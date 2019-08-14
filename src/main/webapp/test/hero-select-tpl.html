@@ -1,7 +1,23 @@
-<div class="row">
+<div class="row my-5">
 	<div class="col-md-8">
+		<h3 class="text-center">{{selected.name}}</h3>
+		<div class="card">
+			<div class="card-body">
+				<p class="row card-text lead">
+					<span class="col-3"><i class="fas fa-fw fa-angle-up" data-toggle="tooltip"
+						data-placement="top" title="Current level"></i> {{selected.lvl}}</span>
+					<span class="col-3"><i class="fas fa-fw fa-coins" data-toggle="tooltip"
+						data-placement="top" title="Current gold"></i> {{selected.gold}}</span>
+					<span class="col-3"><i class="fas fa-fw fa-angle-double-up" data-toggle="tooltip"
+						data-placement="top" title="All time max level"></i> {{selected.maxLvl}}</span>
+					<span class="col-3"><i class="fas fa-fw fa-skull" data-toggle="tooltip"
+						data-placement="top" title="Deaths"></i> {{selected.deaths}}</span>
+				</p>
+			</div>
+		</div>
+		<div class="offset-3 col-6 py-3"><button class="btn btn-primary btn-lg btn-block">Enter world</button></div>
 	</div>
-	<div class="card border-light col-md-4 my-5 px-0">
+	<div class="card border-light col-md-4 px-0">
 		<h4 class="card-header text-center">Select your hero</h4>
 		<div class="card-body">
 			<button class="btn btn-primary btn-block" ng-class="selected === character ? 'active' : ''" 

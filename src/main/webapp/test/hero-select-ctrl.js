@@ -1,9 +1,12 @@
 app.controller('HeroSelectCtrl', function ($scope) {
 
+	$(function () {
+		$('[data-toggle="tooltip"]').tooltip()
+	})
+
 	$scope.characters = [
-	{'name':'Atka', 'lvl':13},
-	{'name':'Batka', 'lvl':324},
-	{'name':'Atkilla', 'lvl':1}
+	{'name': 'Atka', 'lvl': 11, 'gold': 55, 'maxLvl': 13, 'deaths': 3},
+	{'name': 'Batka', 'lvl': 84, 'gold': 987242, 'maxLvl': 125, 'deaths': 12}
 	];
 
 	$scope.selected = $scope.characters[0];
