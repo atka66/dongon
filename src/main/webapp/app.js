@@ -8,6 +8,10 @@ var app = angular.module('Dongon', ['ngRoute', 'angular-growl'])
 			.when('/test/hero-select', {
 				templateUrl: 'test/hero-select-tpl.html',
 				controller: 'HeroSelectCtrl'
+			})
+			.when('/test/main', {
+				templateUrl: 'test/main-tpl.html',
+				controller: 'MainCtrl'
 			});
 	})
 	.config(['growlProvider', function(growlProvider) {
