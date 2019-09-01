@@ -10,7 +10,9 @@
 	* STR: More health point + More weapon damage
 	* AGI: More evasion + More chance to hit
 	* INT: More skill point + More skill DMG
-* Leveling up gives 1 to each
+* Leveling up gives 1 attribute point that can be spent during rebirth
+* Dying causes you to lose all your items, hero attribute points and warp points
+* Dying triggers rebirth, which allows the character to spend attribute points on hero attributes
  
 
 
@@ -18,7 +20,6 @@
 
 * Leveling up by killing monsters and finishing dungeons
 * Consequent dungeons with unlockable warp points every x dungeons
-* Dying causes you to lose all your items, exp and warp points (only your levels are persistent)
 * Different weapons/skills/monsters have different attack damage and range (diamond-shape) 
 
 ### Village
