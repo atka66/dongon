@@ -1,3 +1,3 @@
-app.controller('BillboardCtrl', function ($scope) {
+app.controller('QuestboardCtrl', function ($scope) {
     $scope.test = "ipsum dolor sit amet, consectetur adipiscing elit. Fusce efficitur nisl laoreet, gravida mi in, mollis urna. Sed vel sapien libero. Mauris tristique sollicitudin lectus, lobortis porta tortor convallis in. Praesent mattis risus gravida feugiat laoreet. Nam non tempus nibh, vel euismod mauris. Suspendisse quis enim sed nisl sagittis varius. Aliquam erat volutpat. Suspendisse feugiat cursus odio, nec gravida augue feugiat sed. Quisque in nulla euismod, ullamcorper ipsum vitae, mattis ligula. Etiam massa mi, lacinia semper risus ut, ornare commodo leo. Cras nunc mi, posuere sed ante id, consequat tincidunt ipsum. Vivamus facilisis ante vel lorem scelerisque, et vulputate mauris pellentesque. Curabitur rutrum mattis elit, eu hendrerit diam tristique vel. Aliquam interdum porta velit lobortis efficitur."
 });

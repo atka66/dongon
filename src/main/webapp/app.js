@@ -13,9 +13,9 @@ var app = angular.module('Dongon', ['ngRoute', 'angular-growl'])
 				templateUrl: 'main/hero/home-tpl.html',
 				controller: 'HomeCtrl'
 			})
-			.when('/main/hero/billboard', {
-				templateUrl: 'main/hero/billboard-tpl.html',
-				controller: 'BillboardCtrl'
+			.when('/main/hero/questboard', {
+				templateUrl: 'main/hero/questboard-tpl.html',
+				controller: 'QuestboardCtrl'
 			});
 	})
 	.config(['growlProvider', function(growlProvider) {

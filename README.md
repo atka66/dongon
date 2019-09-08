@@ -26,7 +26,7 @@
 
 * Item trading with vendors or other players
 * NPCs provide various services:
-	* Billboard:
+	* Quest board:
 		* Quests:
 			* Item gathering
 			* Mob killing
