@@ -11,7 +11,7 @@ app.controller('LoginCtrl', function ($scope, rest, $location, $window, growl) {
 			// store login details in cookie
 			$window.localStorage.setItem('auth', $scope.username + ':' + $scope.password);
 			rest.getPrincipal().then(function (resp) {
-				$location.path("/test/hero-select");
+				$location.path("/main/hero-select");
 			}, function (resp) {
 				growl.error("Cannot login! Please check if your username and password are correct!")
 				// remove cookie if login failed

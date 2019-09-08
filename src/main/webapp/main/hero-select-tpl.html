@@ -28,7 +28,7 @@
 						<span class="col-3"><i class="fas fa-fw fa-medal" data-toggle="tooltip"
 							data-placement="top" title="Achievements"></i> {{selected.achievements}}/{{maxAchievements}}</span>
 						<span class="col-3"><i class="fas fa-fw fa-skull" data-toggle="tooltip"
-							data-placement="top" title="Deaths"></i> {{selected.deaths}}</span>
+							data-placement="top" title="Rebirths"></i> {{selected.rebirths}}</span>
 						<span class="col-3 offset-3"><i class="fas fa-fw fa-door-closed" data-toggle="tooltip"
 							data-placement="top" title="All time best dungeon"></i> {{selected.bestDungeon}}</span>
 					</p>
@@ -41,7 +41,7 @@
 		<div class="card border-light col-md-4 px-0">
 			<h4 class="card-header text-center">Select your hero</h4>
 			<div class="card-body">
-				<button class="btn btn-primary btn-block" ng-class="selected === character ? 'active' : ''" 
+				<button class="btn btn-primary btn-block" ng-class="selected === character ? 'active' : ''"
 					ng-repeat="character in characters" ng-click="select(character)">
 					{{character.name}}
 				</button>

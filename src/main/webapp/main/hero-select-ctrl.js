@@ -8,16 +8,16 @@ app.controller('HeroSelectCtrl', function ($scope, $location) {
 
 	$scope.characters = [
 	{
-		'name': 'Atka', 
+		'name': 'Atka',
 		'lvl': 11, 'str': 13, 'agi': 17, 'int': 12,
-		'hp': 23, 'sp': 12, 'gold': 55, 'currBestDungeon': 14, 
-		'achievements': 19, 'deaths': 3, 'bestDungeon': 17
+		'hp': 23, 'sp': 12, 'gold': 55, 'currBestDungeon': 14,
+		'achievements': 19, 'rebirths': 3, 'bestDungeon': 17
 	},
 	{
-		'name': 'Batka', 
+		'name': 'Batka',
 		'lvl': 53, 'str': 78, 'agi': 61, 'int': 86,
-		'hp': 164, 'sp': 120, 'gold': 682, 'currBestDungeon': 61, 
-		'achievements': 97, 'deaths': 42, 'bestDungeon': 117
+		'hp': 164, 'sp': 120, 'gold': 682, 'currBestDungeon': 61,
+		'achievements': 97, 'rebirths': 42, 'bestDungeon': 117
 	}
 	];
 
@@ -28,6 +28,6 @@ app.controller('HeroSelectCtrl', function ($scope, $location) {
 	}
 
 	$scope.enterWorld = function () {
-		$location.path("/test/main");
+		$location.path("/main/hero/home");
 	}
 });

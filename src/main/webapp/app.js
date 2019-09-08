@@ -5,13 +5,17 @@ var app = angular.module('Dongon', ['ngRoute', 'angular-growl'])
 				templateUrl: 'login/login-tpl.html',
 				controller: 'LoginCtrl'
 			})
-			.when('/test/hero-select', {
-				templateUrl: 'test/hero-select-tpl.html',
+			.when('/main/hero-select', {
+				templateUrl: 'main/hero-select-tpl.html',
 				controller: 'HeroSelectCtrl'
 			})
-			.when('/test/main', {
-				templateUrl: 'test/main-tpl.html',
-				controller: 'MainCtrl'
+			.when('/main/hero/home', {
+				templateUrl: 'main/hero/home-tpl.html',
+				controller: 'HomeCtrl'
+			})
+			.when('/main/hero/billboard', {
+				templateUrl: 'main/hero/billboard-tpl.html',
+				controller: 'BillboardCtrl'
 			});
 	})
 	.config(['growlProvider', function(growlProvider) {
