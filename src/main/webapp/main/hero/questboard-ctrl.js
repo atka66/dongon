@@ -1,3 +1,30 @@
 app.controller('QuestboardCtrl', function ($scope) {
-    $scope.test = "ipsum dolor sit amet, consectetur adipiscing elit. Fusce efficitur nisl laoreet, gravida mi in, mollis urna. Sed vel sapien libero. Mauris tristique sollicitudin lectus, lobortis porta tortor convallis in. Praesent mattis risus gravida feugiat laoreet. Nam non tempus nibh, vel euismod mauris. Suspendisse quis enim sed nisl sagittis varius. Aliquam erat volutpat. Suspendisse feugiat cursus odio, nec gravida augue feugiat sed. Quisque in nulla euismod, ullamcorper ipsum vitae, mattis ligula. Etiam massa mi, lacinia semper risus ut, ornare commodo leo. Cras nunc mi, posuere sed ante id, consequat tincidunt ipsum. Vivamus facilisis ante vel lorem scelerisque, et vulputate mauris pellentesque. Curabitur rutrum mattis elit, eu hendrerit diam tristique vel. Aliquam interdum porta velit lobortis efficitur."
+    $scope.acceptableQuests = [
+        {
+            title: 'Rat infestation',
+            description: 'Rats are swarming the underground and are trying to invade the overworld. Kill a few of them to slow the infestation down.',
+            type: 'kill_mob',
+            goal: {
+                target: 'rats',
+                quantity: 10
+            }
+        },
+        {
+            title: 'The magány',
+            description: 'The notorious Magányos csávó is posting unfunny poems and awkward images online. Eliminate this threat to society!',
+            type: 'kill_boss',
+            goal: {
+                target: 'Magányos csávó'
+            }
+        },
+        {
+            title: 'Treasure hunting',
+            description: 'Find me some fine booty. Give me golden rings!',
+            type: 'find_item',
+            goal: {
+                target: 'golden rings',
+                quantity: 5
+            }
+        }
+    ];
 });
