@@ -3,7 +3,7 @@ app.directive('topNav', function () {
 		restrict: 'E',
 		templateUrl: 'directives/topnav-tpl.html',
 		controller: function controller($scope) {
-            $scope.loggedInUser = "test"
+            $scope.loggedInUser = "Atka"
 		}
 	}
 });

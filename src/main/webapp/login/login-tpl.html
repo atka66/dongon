@@ -3,48 +3,52 @@
 		<div class="card border-light col-md-4 mx-auto my-5 px-0">
 			<h4 class="card-header text-center">Dongon</h4>
 			<div class="card-body">
-				<h5 class="card-subtitle text-center text-muted">Login</h5>
-				<div class="form-group">
-					<label class="label">Username</label>
-					<input type="text" class="login-input" placeholder="Enter username" ng-model="username">
-				</div>
-				<div class="form-group">
-					<label class="label">Password</label>
-					<input type="password" class="login-input" placeholder="Enter password" ng-model="password">
-				</div>
-				<div>
-					<button class="btn btn-primary" ng-click="login()">
-						Login
-					</button>
-					<button class="btn btn-outline-primary float-right" type="button" data-toggle="collapse" data-target="#registerCollapse">
-						Sign up...
-					</button>
-				</div>
+				<form>
+					<h5 class="card-subtitle text-center text-muted">Login</h5>
+					<div class="form-group">
+						<label class="label">Username</label>
+						<input type="text" class="login-input" placeholder="Enter username" ng-model="username">
+					</div>
+					<div class="form-group">
+						<label class="label">Password</label>
+						<input type="password" class="login-input" placeholder="Enter password" ng-model="password">
+					</div>
+					<div>
+						<button type="submit" class="btn btn-primary" ng-click="login()">
+							Login
+						</button>
+						<button class="btn btn-outline-primary float-right" type="button" data-toggle="collapse" data-target="#registerCollapse">
+							Sign up...
+						</button>
+					</div>
+				</form>
 				<div class="collapse" id="registerCollapse">
 					<div class="border border-secondary my-3"></div>
-					<h5 class="card-subtitle text-center text-muted">Registration
-						<i class="fas fa-fw fa-question-circle text-muted" data-toggle="popover" data-placement="top" data-html="true"
-						data-title="Username and password" data-content="
+					<form>
+						<h5 class="card-subtitle text-center text-muted">Registration
+							<i class="fas fa-fw fa-question-circle text-muted" data-placement="top" data-html="true"
+							   data-title="Username and password" data-content="
 					<ul>
 						<li>must be 6-20 characters long</li>
 						<li>must only contain letters and numbers</li>
 						<li>must not contain spaces, special characters, or emoji</li>
 						<li>username is not your in-game name, it is only used for logging in</li>
 					</ul>
-					"></i>
-					</h5>
-					<div class="form-group">
-						<label class="label">Username</label>
-						<input type="text" class="login-input" placeholder="Enter username" ng-model="registerUsername">
-						<small class="form-text text-muted">Something like <span class="font-italic">TODO_GENERATE_THESE_PLS</span></small>
-					</div>
-					<div class="form-group">
-						<label class="label">Password</label>
-						<input type="password" class="login-input" placeholder="Enter password" ng-model="registerPassword">
-					</div>
-					<button class="btn btn-primary" ng-click="signup()">
-						Sign me up!
-					</button>
+					" popover></i>
+						</h5>
+						<div class="form-group">
+							<label class="label">Username</label>
+							<input type="text" class="login-input" placeholder="Enter username" ng-model="registerUsername">
+							<small class="form-text text-muted">Something like <span class="font-italic">TODO_GENERATE_THESE_PLS</span></small>
+						</div>
+						<div class="form-group">
+							<label class="label">Password</label>
+							<input type="password" class="login-input" placeholder="Enter password" ng-model="registerPassword">
+						</div>
+						<button type="submit" class="btn btn-primary" ng-click="signup()">
+							Sign me up!
+						</button>
+					</form>
 				</div>
 			</div>
 		</div>

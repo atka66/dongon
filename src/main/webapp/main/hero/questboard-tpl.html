@@ -3,16 +3,15 @@
 	<div class="container py-3">
 		<div class="jumbotron bg-secondary">
 			<h2>Quest board</h2>
-			<p class="lead">The quest board is a very useful source of information to a hero looking for work.
-							You are be able to view different Quests. Complete different quests for different rewards!</p>
+			<p class="lead">The quest board is a very useful source of information to a hero looking for work. Complete different quests for different rewards!</p>
 		</div>
 		<div class="card-columns">
 			<div class="card text-center" ng-repeat="quest in acceptableQuests">
 				<div class="card-body">
 					<h5 class="card-title" ng-switch="quest.type">
-						<i class="fa fa-fw fa-skull" ng-switch-when="kill_mob"></i>
-						<i class="fa fa-fw fa-skull text-danger" ng-switch-when="kill_boss"></i>
-						<i class="fa fa-fw fa-search" ng-switch-when="find_item"></i>
+						<i class="fa fa-fw fa-skull" ng-switch-when="kill_mob" data-placement="top" title="This quest is about killing mobs" tooltip></i>
+						<i class="fa fa-fw fa-skull text-danger" ng-switch-when="kill_boss" data-placement="top" title="This quest is about killing a boss" tooltip></i>
+						<i class="fa fa-fw fa-search" ng-switch-when="find_item" data-placement="top" title="This quest is about finding items" tooltip></i>
 					</h5>
 					<h5 class="card-subtitle mb-2">{{quest.title}}</h5>
 					<p class="card-text">{{quest.description}}</p>
@@ -20,7 +19,7 @@
 						<footer class="blockquote-footer mb-2" ng-switch="quest.type">
 							<span ng-switch-when="kill_mob">Kill {{quest.goal.quantity}} <cite>{{quest.goal.target}}</cite></span>
 							<span ng-switch-when="kill_boss">Kill <cite>{{quest.goal.target}}</cite></span>
-							<span ng-switch-when="find_item">Find {{quest.goal.quantity}} <cite>{{quest.goal.target}}</cite></span>
+							<span ng-switch-when="find_item">Find <span ng-if="quest.goal.quantity">{{quest.goal.quantity}} </span><cite>{{quest.goal.target}}</cite></span>
 						</footer>
 					</blockquote>
 					<a href="" class="card-link">Accept quest</a>

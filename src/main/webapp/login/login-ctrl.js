@@ -1,9 +1,5 @@
 app.controller('LoginCtrl', function ($scope, rest, $location, $window, growl) {
 
-	$(function () {
-		$('[data-toggle="popover"]').popover()
-	})
-
 	$scope.login = function () {
 		if (!$scope.username || !$scope.password) {
 			growl.error("Username and password are required to login!")
@@ -25,7 +21,7 @@ app.controller('LoginCtrl', function ($scope, rest, $location, $window, growl) {
 		if (!$scope.registerUsername || !$scope.registerPassword) {
 			growl.error("Username and password are required to sign up!")
 		} else {
-			// TODO registration
+			console.log("TODO sign up")
 		}
 	}
 });
