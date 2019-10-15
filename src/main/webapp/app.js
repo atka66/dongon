@@ -16,6 +16,18 @@ var app = angular.module('Dongon', ['ngRoute', 'angular-growl'])
 			.when('/main/hero/questboard', {
 				templateUrl: 'main/hero/questboard-tpl.html',
 				controller: 'QuestboardCtrl'
+			})
+			.when('/main/hero/blacksmith', {
+				templateUrl: 'main/hero/blacksmith-tpl.html',
+				controller: 'BlacksmithCtrl'
+			})
+			.when('/main/hero/inn', {
+				templateUrl: 'main/hero/inn-tpl.html',
+				controller: 'InnCtrl'
+			})
+			.when('/main/hero/enchanter', {
+				templateUrl: 'main/hero/enchanter-tpl.html',
+				controller: 'EnchanterCtrl'
 			});
 	})
 	.config(['growlProvider', function(growlProvider) {
